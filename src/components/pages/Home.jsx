@@ -6,6 +6,7 @@ const TODO_LISTS_ITEMS = "TODO_LISTS_ITEMS";
 
 export function Home({ username, toggleTheme, theme, onLogin }) {
   const [tasks, setTasks] = useState([]);
+  const [search, setSearch] = useState("");
 
   const loadStorage = () => {
     const savedData = localStorage.getItem(TODO_LISTS_ITEMS);
