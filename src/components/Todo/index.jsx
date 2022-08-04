@@ -10,6 +10,7 @@ export function Todo({ tasks, onTaskCompleted, onDeleteTask }) {
           type="checkbox"
           className="w-4 h-4"
           onClick={() => onTaskCompleted(tasks.id)}
+          checked={tasks.isCompleted ? "checked" : ""}
         />
         <div>
           <h4
