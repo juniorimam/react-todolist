@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Header } from "../Header";
 import { Todo } from "../Todo";
+import { NotFound } from "./NotFound";
 
 const TODO_LISTS_ITEMS = "TODO_LISTS_ITEMS";
 
@@ -67,14 +68,18 @@ export function Home({ username, toggleTheme, theme, onLogin }) {
           theme={theme}
         />
         <section className="container mx-auto py-10 pr-10 flex flex-col gap-y-5 lg:basis-11/12 md:basis-6/12">
-          {tasks.map((task) => (
-            <Todo
-              key={task.id}
-              tasks={task}
-              onTaskCompleted={onTaskCompleted}
-              onDeleteTask={onDeleteTask}
-            />
-          ))}
+          {tasks.length <= 0 ? (
+            <NotFound />
+          ) : (
+            tasks.map((task) => (
+              <Todo
+                key={task.id}
+                tasks={task}
+                onTaskCompleted={onTaskCompleted}
+                onDeleteTask={onDeleteTask}
+              />
+            ))
+          )}
         </section>
       </div>
     </>
