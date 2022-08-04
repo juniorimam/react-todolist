@@ -5,10 +5,6 @@
 @tailwind utilities;
 
 @layer base {
-  * {
-    @apply box-border;
-  }
-
   html {
     @apply font-sans text-primary;
   }
