@@ -1,12 +1,31 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Header } from "../Header";
 import { Todo } from "../Todo";
 
-export function Home({ username, toggleTheme, theme }) {
+const TODO_LISTS_ITEMS = "TODO_LISTS_ITEMS";
+
+export function Home({ username, toggleTheme, theme, onLogin }) {
   const [tasks, setTasks] = useState([]);
 
+  const loadStorage = () => {
+    const savedData = localStorage.getItem(TODO_LISTS_ITEMS);
+    if (savedData) {
+      setTasks(JSON.parse(savedData));
+    }
+  };
+
+  useEffect(() => {
+    loadStorage();
+    onLogin();
+  }, []);
+
+  const saveTasksStorage = (newTasks) => {
+    setTasks(newTasks);
+    localStorage.setItem(TODO_LISTS_ITEMS, JSON.stringify(newTasks));
+  };
+
   const addTask = (taskTitle, taskDescription) => {
-    setTasks([
+    saveTasksStorage([
       ...tasks,
       {
         id: +new Date(),
@@ -28,12 +47,12 @@ export function Home({ username, toggleTheme, theme }) {
       return task;
     });
 
-    setTasks(newTasks);
+    saveTasksStorage(newTasks);
   };
 
   const onDeleteTask = (taskId) => {
     const newTasks = tasks.filter((task) => task.id !== taskId);
-    setTasks(newTasks);
+    saveTasksStorage(newTasks);
   };
 
   return (

@@ -6,7 +6,6 @@ export function Login({ onLogin, toggleTheme, theme }) {
   function handleLogin(e) {
     e.preventDefault();
     onLogin(username);
-    console.log(toggleTheme);
   }
 
   return (
@@ -31,13 +30,13 @@ export function Login({ onLogin, toggleTheme, theme }) {
         </form>
         <button
           onClick={toggleTheme}
-          className="absolute bottom-5 left-1/2 -translate-x-1/2 bg-gray-300 rounded-lg flex flex-row justify-center items-center gap-x-3 p-3 w-fit dark:bg-neutral-800 duration-300"
+          className="absolute bottom-5 left-1/2 -translate-x-1/2 bg-gray-300 rounded-lg flex flex-row justify-center items-center gap-x-3 p-3 w-fit dark:bg-neutral-900 duration-300"
         >
           {theme === "light" ? (
             <>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5 fill-gray-700"
+                className="h-5 w-5 fill-gray-800"
                 viewBox="0 0 20 20"
                 fill="currentColor"
               >
