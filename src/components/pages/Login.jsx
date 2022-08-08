@@ -9,9 +9,11 @@ export function Login({ onLogin, toggleTheme, theme }) {
   }
 
   return (
-    <div className="min-h-screen  bg-gray-100 dark:bg-neutral-800">
-      <div className="lg:w-4/12 md:w-6/12 mx-auto flex flex-col justify-center text-center min-h-screen relative">
-        <h1 className="text-2xl font-bold pb-3 dark:text-sky-500">Sign in</h1>
+    <div className="bg-gray-100 dark:bg-neutral-800">
+      <div className="container lg:w-4/12 md:w-7/12 mx-auto flex flex-col justify-center text-center min-h-screen relative">
+        <h1 className="text-2xl font-extrabold pb-3 dark:text-sky-500">
+          Sign in
+        </h1>
         <p className="text-sm text-secondary mb-8 dark:text-neutral-500">
           Create your todo list to manage your daily activity.
         </p>

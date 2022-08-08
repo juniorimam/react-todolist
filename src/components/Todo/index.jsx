@@ -3,13 +3,13 @@ export function Todo({ tasks, onTaskCompleted, onDeleteTask }) {
     <div
       className={`${
         tasks.isCompleted ? "opacity-60" : ""
-      } p-6 rounded-lg bg-white flex flex-row justify-between items-center duration-300 dark:bg-neutral-700/50 dark:ring-1 dark:ring-neutral-600/80`}
+      } p-6 rounded-lg bg-white flex flex-row justify-between items-center duration-300 dark:bg-neutral-700/50 dark:ring-1 dark:ring-neutral-600/80 dark:hover:ring-sky-600/80 hover:ring-1 hover:ring-gray-300 xs:py-4 xs:px-5 xs:text-sm`}
     >
       <div className="flex gap-x-4 items-center">
         <input
           type="checkbox"
-          className="w-4 h-4"
-          onClick={() => onTaskCompleted(tasks.id)}
+          className="w-4 h-4 cursor-pointer"
+          onChange={() => onTaskCompleted(tasks.id)}
           checked={tasks.isCompleted ? "checked" : ""}
         />
         <div>

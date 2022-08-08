@@ -59,7 +59,7 @@ export function Home({ username, toggleTheme, theme, onLogin }) {
 
   return (
     <>
-      <div className="flex flex-row gap-x-8 min-h-screen bg-gray-100 dark:bg-neutral-800">
+      <div className="flex xs:flex-col xl:flex-row gap-x-8 min-h-screen bg-gray-100 dark:bg-neutral-800">
         <Header
           onAddTask={addTask}
           tasks={tasks}
@@ -67,7 +67,7 @@ export function Home({ username, toggleTheme, theme, onLogin }) {
           toggleTheme={toggleTheme}
           theme={theme}
         />
-        <section className="container mx-auto py-10 pr-10 flex flex-col gap-y-5 lg:basis-11/12 md:basis-6/12">
+        <section className="container mx-auto py-10 pr-10 flex flex-col gap-y-5 lg:basis-11/12 md:basis-6/12 xs:px-3 xs:py-6 xs:justify-center">
           {tasks.length <= 0 ? (
             <NotFound />
           ) : (
